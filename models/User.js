@@ -21,8 +21,7 @@ const userSchema = new mongoose.Schema({
     ],
     friends: [
         { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
-    ]
-    },
+    ]},
     {
         toJSON: {
             virtuals: true,
@@ -45,14 +44,14 @@ const User = mongoose.model('user', userSchema);
 const handleError = (err) => console.error(err);
 
 // We use the model to create individual documents that have the properties as defined in our schema
-User.create(
-    {
-        username: 'tester',
-        email: 10,
-        price: 1,
-        inStock: true,
-    },
-    (err) => (err ? handleError(err) : console.log('Created new document'))
-);
+// User.create(
+//     {
+//         username: 'tester',
+//         email: 10,
+//         price: 1,
+//         inStock: true,
+//     },
+//     (err) => (err ? handleError(err) : console.log('Created new document'))
+// );
 
 module.exports = User;
