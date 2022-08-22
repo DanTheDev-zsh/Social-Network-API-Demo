@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // include validator for email
-import { isEmail } from 'validator';
+const { isEmail } = require('validator');
 
 // Create a new instance of the Mongoose schema to define shape of each document
 const userSchema = new mongoose.Schema({
@@ -25,8 +25,7 @@ const userSchema = new mongoose.Schema({
     {
         toJSON: {
             virtuals: true,
-        },
-        id: false,
+        }
     }
 );
 
